@@ -1,5 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :developer, counter_cache: true
+  # https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
   belongs_to :user
 
   validates :start_date, :end_date, presence: true, availability: true
