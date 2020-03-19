@@ -6,4 +6,5 @@ class DeveloperSkill < ApplicationRecord
 
   acts_as_list add_new_at: :bottom
   scope :sorted, -> { order(position: :asc) }
+  # https://www.rubyguides.com/2019/10/scopes-in-ruby-on-rails/
 end

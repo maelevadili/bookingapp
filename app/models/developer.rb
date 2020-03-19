@@ -28,6 +28,14 @@ class Developer < ApplicationRecord
 
   def skills_to_s
     skills.pluck(:name).map(&:titleize).join(" | ")
+    # pluck(*column_names)
+    # => shortcut to select one or more attributes without loading a bunch of
+    # records just to grab the attributes needed. For ex: Person.pluck(:name)
+    # instead of Person.all.map(&:name)
+    # Pluck returns an Array of attribute values type-casted to match the
+    # plucked column names, if they can be deduced. Plucking an SQL fragment
+    # returns String values by default.
+    # https://apidock.com/rails/ActiveRecord/Calculations/pluck
   end
 
   def unavailable_dates
